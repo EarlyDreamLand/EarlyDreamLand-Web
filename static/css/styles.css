@@ -1,0 +1,303 @@
+/* 引入 Fusion Pixel 字体 */
+@font-face {
+    font-family: 'Fusion Pixel';
+    src: url('/static/fonts/fusion-pixel-12px-proportional-latin.woff2') format('woff2'),
+         url('/static/fonts/fusion-pixel-12px-proportional-latin.ttf') format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fusion Pixel';
+    src: url('/static/fonts/fusion-pixel-12px-proportional-ja.woff2') format('woff2'),
+         url('/static/fonts/fusion-pixel-12px-proportional-ja.ttf') format('truetype');
+    unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF00-FFEF, U+4E00-9FAF;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fusion Pixel';
+    src: url('/static/fonts/fusion-pixel-12px-proportional-ko.woff2') format('woff2'),
+         url('/static/fonts/fusion-pixel-12px-proportional-ko.ttf') format('truetype');
+    unicode-range: U+1100-11FF, U+3130-318F, U+AC00-D7AF;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fusion Pixel';
+    src: url('/static/fonts/fusion-pixel-12px-proportional-zh_hans.woff2') format('woff2'),
+         url('/static/fonts/fusion-pixel-12px-proportional-zh_hans.ttf') format('truetype');
+    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fusion Pixel';
+    src: url('/static/fonts/fusion-pixel-12px-proportional-zh_hant.woff2') format('woff2'),
+         url('/static/fonts/fusion-pixel-12px-proportional-zh_hant.ttf') format('truetype');
+    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+    font-display: swap;
+}
+
+/* 全局样式 */
+body {
+    font-family: 'Fusion Pixel', sans-serif;
+    padding-top: 56px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 首页横幅 */
+header {
+    background: url('https://s2.loli.net/2025/01/04/pkrIFtsadjEe2vA.png') no-repeat center center/cover;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    animation: glow 2s infinite alternate;
+}
+
+header .lead {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+header .btn {
+    margin-top: 30px;
+    background-color: #4CAF50;
+    border: none;
+    transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+header .btn:hover {
+    background-color: #45a049;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+    }
+    100% {
+        text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 40px #4CAF50;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 导航栏 */
+.navbar {
+    backdrop-filter: blur(20px);
+    background-color: rgba(30, 30, 30, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #4CAF50 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* 导航栏切换按钮优化 */
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.8); /* 添加边框 */
+    padding: 0.5rem; /* 增加内边距 */
+    border-radius: 5px; /* 圆角 */
+    background-color: rgba(30, 30, 30, 0.8); /* 背景色 */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* 修改图标颜色为白色 */
+    width: 1.5em; /* 增大图标宽度 */
+    height: 1.5em; /* 增大图标高度 */
+}
+
+/* 导航栏链接的 active 状态 */
+.navbar-nav .nav-link.active {
+    color: #4CAF50 !important;
+    font-weight: bold;
+}
+
+/* 白色背景区域的文字颜色 */
+.bg-white {
+    background-color: white;
+    color: black;
+}
+
+/* 浅色背景区域的文字颜色 */
+.bg-light {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+/* 卡片样式 */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* 图片展示区域 */
+#gallery .img-fluid {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#gallery .img-fluid:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 移除分页按钮的默认间距 */
+.pagination {
+    gap: 0;
+}
+
+.pagination .page-item {
+    margin: 0;
+}
+
+.pagination .page-link {
+    border-radius: 0;
+    margin: 0;
+    padding: 8px 16px;
+    border: 1px solid #dee2e6;
+    color: #007bff;
+}
+
+/* 第一个按钮的左圆角 */
+.pagination .page-item:first-child .page-link {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* 最后一个按钮的右圆角 */
+.pagination .page-item:last-child .page-link {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* 禁用状态 */
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* 团队介绍区域 */
+#team .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#team .card:hover {
+    transform: translateY(-10px);
+}
+
+#team .card-img-top {
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 1rem auto 0;
+}
+
+#team .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+#team .card-title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #4caf50;
+}
+
+#team .card-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+}
+
+#team .card-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    flex: 1;
+}
+
+#team .btn-primary {
+    background-color: #4caf50;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    align-self: center;
+}
+
+#team .btn-primary:hover {
+    background-color: #45a049;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header .lead {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .navbar-toggler {
+        border: 2px solid rgba(255, 255, 255, 0.9); /* 更明显的边框 */
+        background-color: rgba(30, 30, 30, 0.9); /* 更深的背景色 */
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* 更明显的图标颜色 */
+    }
+}
