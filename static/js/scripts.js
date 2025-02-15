@@ -116,7 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#')) {
+            
+            // 增加有效性检查：必须是以 # 开头且长度大于 1 的有效锚点
+            if (targetId.startsWith('#') && targetId.length > 1) {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
