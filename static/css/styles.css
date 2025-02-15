@@ -1,5 +1,7 @@
-/* 引入 Fusion Pixel 字体 */
-@font-face {
+/* ========================
+   字体定义
+   ======================== */
+   @font-face {
     font-family: 'Fusion Pixel';
     src: url('/static/fonts/fusion-pixel-12px-proportional-latin.woff2') format('woff2'),
          url('/static/fonts/fusion-pixel-12px-proportional-latin.ttf') format('truetype');
@@ -39,7 +41,9 @@
     font-display: swap;
 }
 
-/* 全局样式 */
+/* ========================
+   全局样式
+   ======================== */
 body {
     font-family: 'Fusion Pixel', sans-serif;
     padding-top: 56px;
@@ -49,9 +53,11 @@ body {
     line-height: 1.6;
 }
 
-/* 首页横幅 */
+/* ========================
+   首页横幅
+   ======================== */
 header {
-    background: url('https://s2.loli.net/2025/01/04/pkrIFtsadjEe2vA.png') no-repeat center center/cover;
+    background: url('https://s21.ax1x.com/2025/02/16/pEKgJrF.png') no-repeat center center/cover;
     color: white;
 }
 
@@ -79,38 +85,32 @@ header .btn:hover {
 }
 
 @keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 20px #4CAF50;
-    }
-    100% {
-        text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 40px #4CAF50;
-    }
+    0% { text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 20px #4CAF50; }
+    100% { text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 40px #4CAF50; }
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-/* 导航栏 */
+/* ========================
+   导航系统
+   ======================== */
 .navbar {
     backdrop-filter: blur(20px);
     background-color: rgba(30, 30, 30, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* 品牌标识 */
 .navbar-brand {
     font-size: 1.5rem;
     color: #4CAF50 !important;
 }
 
+/* 导航链接 */
 .navbar-nav .nav-link {
     color: #ffffff !important;
     transition: background-color 0.3s ease;
@@ -120,39 +120,91 @@ header .btn:hover {
     background-color: rgba(76, 175, 80, 0.1);
 }
 
-/* 导航栏切换按钮优化 */
-.navbar-toggler {
-    border: 2px solid rgba(255, 255, 255, 0.8); /* 添加边框 */
-    padding: 0.5rem; /* 增加内边距 */
-    border-radius: 5px; /* 圆角 */
-    background-color: rgba(30, 30, 30, 0.8); /* 背景色 */
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* 修改图标颜色为白色 */
-    width: 1.5em; /* 增大图标宽度 */
-    height: 1.5em; /* 增大图标高度 */
-}
-
-/* 导航栏链接的 active 状态 */
 .navbar-nav .nav-link.active {
     color: #4CAF50 !important;
     font-weight: bold;
 }
 
-/* 白色背景区域的文字颜色 */
-.bg-white {
-    background-color: white;
-    color: black;
+/* 移动端菜单开关 */
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: rgba(30, 30, 30, 0.8);
 }
 
-/* 浅色背景区域的文字颜色 */
-.bg-light {
-    background-color: #f8f9fa;
-    color: black;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
 }
 
-/* 卡片样式 */
+/* ========================
+   友情链接下拉菜单
+   ======================== */
+.navbar .dropdown-menu {
+    background-color: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    min-width: 200px;
+    margin-top: 8px;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    color: #ffffff !important;
+    font-family: 'Fusion Pixel', sans-serif;
+    font-size: 14px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(76, 175, 80, 0.15) !important;
+    color: #4CAF50 !important;
+    padding-left: 2rem;
+}
+
+.dropdown-item::before {
+    content: "▶";
+    color: rgba(76, 175, 80, 0.5);
+    position: absolute;
+    left: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0;
+}
+
+.navbar .dropdown-toggle::after {
+    border-top-color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.navbar .show .dropdown-toggle::after {
+    transform: rotate(-180deg);
+}
+
+/* ========================
+   通用组件
+   ======================== */
+/* 背景色系统 */
+.bg-white { background-color: white; color: black; }
+.bg-light { background-color: #f8f9fa; color: black; }
+
+/* 卡片系统 */
 .card {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -165,7 +217,7 @@ header .btn:hover {
     transform: translateY(-10px);
 }
 
-/* 图片展示区域 */
+/* 图片展示区 */
 #gallery .img-fluid {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -176,7 +228,7 @@ header .btn:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* 移除分页按钮的默认间距 */
+/* 分页系统 */
 .pagination {
     gap: 0;
 }
@@ -193,25 +245,24 @@ header .btn:hover {
     color: #007bff;
 }
 
-/* 第一个按钮的左圆角 */
 .pagination .page-item:first-child .page-link {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
 
-/* 最后一个按钮的右圆角 */
 .pagination .page-item:last-child .page-link {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
 
-/* 禁用状态 */
 .pagination .page-item.disabled .page-link {
     color: #6c757d;
     cursor: not-allowed;
 }
 
-/* 团队介绍区域 */
+/* ========================
+   团队展示区
+   ======================== */
 #team .card {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -278,26 +329,31 @@ header .btn:hover {
     background-color: #45a049;
 }
 
-/* 响应式调整 */
+/* ========================
+   响应式设计
+   ======================== */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header .lead {
-        font-size: 1rem;
-    }
-
-    .navbar-brand {
-        font-size: 1.25rem;
-    }
+    header h1 { font-size: 2rem; }
+    header .lead { font-size: 1rem; }
+    
+    .navbar-brand { font-size: 1.25rem; }
     
     .navbar-toggler {
-        border: 2px solid rgba(255, 255, 255, 0.9); /* 更明显的边框 */
-        background-color: rgba(30, 30, 30, 0.9); /* 更深的背景色 */
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        background-color: rgba(30, 30, 30, 0.9);
     }
 
     .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* 更明显的图标颜色 */
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
+    
+    .navbar-collapse .dropdown-menu {
+        background-color: rgba(30, 30, 30, 0.9);
+        margin-top: 0;
+        border: none;
+        box-shadow: none;
+    }
+    
+    .dropdown-item { padding-left: 2.5rem; }
+    .dropdown-item::before { left: 1.5rem; }
 }
