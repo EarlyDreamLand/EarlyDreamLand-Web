@@ -53,8 +53,6 @@ body {
     line-height: 1.6;
 }
 
-
-
 /* ========================
    首页横幅
    ======================== */
@@ -134,70 +132,6 @@ header .btn:hover {
     background-color: rgba(30, 30, 30, 0.8);
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 1.5em;
-    height: 1.5em;
-}
-
-/* ========================
-   友情链接下拉菜单
-   ======================== */
-.navbar .dropdown-menu {
-    background-color: rgba(30, 30, 30, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    min-width: 200px;
-    margin-top: 8px;
-    border-radius: 4px;
-    padding: 0.5rem 0;
-}
-
-.dropdown-item {
-    color: #ffffff !important;
-    font-family: 'Fusion Pixel', sans-serif;
-    font-size: 14px;
-    padding: 0.75rem 1.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-    background-color: rgba(76, 175, 80, 0.15) !important;
-    color: #4CAF50 !important;
-    padding-left: 2rem;
-}
-
-.dropdown-item::before {
-    content: "▶";
-    color: rgba(76, 175, 80, 0.5);
-    position: absolute;
-    left: 1rem;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.dropdown-item:hover::before {
-    opacity: 1;
-    transform: translateX(3px);
-}
-
-.dropdown-divider {
-    border-color: rgba(255, 255, 255, 0.1);
-    margin: 0.5rem 0;
-}
-
-.navbar .dropdown-toggle::after {
-    border-top-color: rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s ease;
-}
-
-.navbar .show .dropdown-toggle::after {
-    transform: rotate(-180deg);
-}
-
 /* ========================
    通用组件
    ======================== */
@@ -243,7 +177,13 @@ header .btn:hover {
     margin: 0;
     padding: 8px 16px;
     border: 1px solid #dee2e6;
-    color: #007bff;
+    color: #4CAF50;
+}
+
+.pagination .page-link:focus {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 .pagination .page-item:first-child .page-link {
@@ -343,18 +283,4 @@ header .btn:hover {
         border: 2px solid rgba(255, 255, 255, 0.9);
         background-color: rgba(30, 30, 30, 0.9);
     }
-
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    
-    .navbar-collapse .dropdown-menu {
-        background-color: rgba(30, 30, 30, 0.9);
-        margin-top: 0;
-        border: none;
-        box-shadow: none;
-    }
-    
-    .dropdown-item { padding-left: 2.5rem; }
-    .dropdown-item::before { left: 1.5rem; }
 }
