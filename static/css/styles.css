@@ -1,7 +1,7 @@
 /* ========================
    字体定义
    ======================== */
-   @font-face {
+@font-face {
     font-family: 'Fusion Pixel';
     src: url('/static/fonts/fusion-pixel-12px-proportional-latin.woff2') format('woff2'),
          url('/static/fonts/fusion-pixel-12px-proportional-latin.ttf') format('truetype');
@@ -52,6 +52,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
 }
+
+
 
 /* ========================
    首页横幅
