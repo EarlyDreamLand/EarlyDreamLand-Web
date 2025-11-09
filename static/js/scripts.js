@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 加载图片数据
     async function loadGalleryImages() {
         try {
-            const response = await fetch('/data/gallery-images.json'); // JSON 文件路径
+            const response = await fetch('data/gallery-images.json'); // JSON 文件路径
             const galleryImages = await response.json();
             renderGallery(galleryImages);
         } catch (error) {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 加载团队成员数据
     async function loadTeamMembers() {
         try {
-            const response = await fetch('/data/team-members.json'); // JSON 文件路径
+            const response = await fetch('data/team-members.json'); // JSON 文件路径
             const teamMembers = await response.json();
             renderTeam(teamMembers);
         } catch (error) {
