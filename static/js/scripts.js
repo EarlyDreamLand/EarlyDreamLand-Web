@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadGalleryImages();
     loadTeamMembers();
     // API 地址
-    const apiUrl = "https://api.mcsrvstat.us/3/mc.11na.cn";
+    const apiUrl = "https://uapis.cn/api/v1/game/minecraft/serverstatus?server=mc.11na.cn";
 
     // 获取服务器状态
     async function fetchServerStatus() {
@@ -152,8 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // 更新页面内容
             document.getElementById("server-status").textContent = data.online ? "在线" : "离线";
             document.getElementById("server-status").className = data.online ? "text-success" : "text-danger";
-            document.getElementById("server-version").textContent = `${data.software} ${data.version}` || "未知";
-            document.getElementById("online-players").textContent = `${data.players.online}/${data.players.max}`;
+            document.getElementById("server-version").textContent = `${data.version}` || "未知";
+            document.getElementById("online-players").textContent = `${data.players}/${data.max_players}` || "未知";
         } catch (error) {
             // console.error("无法获取服务器状态:", error);
             document.getElementById("server-status").textContent = "无法加载";
