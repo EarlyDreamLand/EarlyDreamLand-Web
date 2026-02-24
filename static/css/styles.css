@@ -23,267 +23,295 @@
 body {
     font-family: 'Fusion Pixel', sans-serif;
     padding-top: 56px;
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: #121212;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #e0e0e0;
     font-size: 16px;
     line-height: 1.6;
+}
+
+.bg-white, .bg-light {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+.text-muted {
+    color: #aaa !important;
+    text-shadow: 1px 1px 0 #000;
+}
+
+/* ========================
+   MC 3D 按钮系统
+   ======================== */
+/* 通用按钮构造 */
+.btn-mc-stone, .btn-mc-green, .page-link, .btn-primary, .btn-light {
+    font-family: 'Fusion Pixel', sans-serif;
+    border: 2px solid;
+    border-color: #ffffff #555555 #555555 #ffffff !important; /* 3D 边框 */
+    position: relative;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.1s, background-color 0.1s;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #000;
+    color: #fff !important;
+    border-radius: 6px !important;
+    margin: 5px;
+    outline: none !important; /* 去除默认轮廓 */
+}
+
+/* --- 绿色按钮 --- */
+.btn-mc-green, .btn-primary {
+    background-color: #388E3C !important;
+}
+
+.btn-mc-green:hover, .btn-primary:hover {
+    background-color: #4CAF50 !important;
+    transform: translateY(-2px);
+}
+
+.btn-mc-green:active, .btn-primary:active {
+    background-color: #2E7D32 !important;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    border-color: #555555 #ffffff #ffffff #555555 !important;
+}
+
+/* --- 石头/灰色按钮 --- */
+.btn-mc-stone, .btn-light {
+    background-color: #555 !important;
+}
+
+.btn-mc-stone:hover, .btn-light:hover {
+    background-color: #777 !important;
+    transform: translateY(-2px);
+}
+
+.btn-mc-stone:active, .btn-light:active {
+    background-color: #444 !important;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    border-color: #555555 #ffffff #ffffff #555555 !important;
+}
+
+/* ========================
+   导航栏
+   ======================== */
+.navbar {
+    backdrop-filter: blur(15px);
+    background-color: rgba(20, 20, 20, 0.9) !important;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #55ff55 !important;
+    text-shadow: 0 0 5px rgba(85, 255, 85, 0.3);
+}
+
+.navbar-nav .nav-link {
+    color: #bbb !important;
+    margin: 0 5px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    background-color: #333;
+    color: #55ff55 !important;
+    box-shadow: inset 0 0 0 1px #55ff55;
+    transform: translateY(-2px);
 }
 
 /* ========================
    首页横幅
    ======================== */
 header {
-    background: url('https://s2.loli.net/2025/01/04/pkrIFtsadjEe2vA.png') no-repeat center center/cover;
-    color: white;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/background.png') no-repeat center center/cover;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    animation: glow 2s infinite alternate;
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 3px 3px 0 #000, 0 0 20px rgba(76, 175, 80, 0.8);
+    animation: float 3s ease-in-out infinite;
 }
 
 header .lead {
-    font-size: 1.25rem;
-    margin-top: 20px;
-    animation: glow 2s infinite alternate;
-}
-
-header .btn {
-    margin-top: 30px;
-    background-color: #4CAF50;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-header .btn:hover {
-    background-color: #45a049;
-}
-
-@keyframes glow {
-    0% { text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 20px #4CAF50; }
-    100% { text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 40px #4CAF50; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* ========================
-   导航系统
-   ======================== */
-.navbar {
-    backdrop-filter: blur(20px);
-    background-color: rgba(30, 30, 30, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* 品牌标识 */
-.navbar-brand {
+    color: #eee;
     font-size: 1.5rem;
-    color: #4CAF50 !important;
-}
-
-/* 导航链接 */
-.navbar-nav .nav-link {
-    color: #ffffff !important;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-    background-color: rgba(76, 175, 80, 0.1);
-}
-
-.navbar-nav .nav-link.active {
-    color: #4CAF50 !important;
-    font-weight: bold;
-}
-
-/* 移动端菜单开关 */
-.navbar-toggler {
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    padding: 0.5rem;
+    text-shadow: 2px 2px 0 #000;
+    background-color: rgba(0,0,0,0.6);
+    padding: 5px 15px;
+    display: inline-block;
     border-radius: 5px;
-    background-color: rgba(30, 30, 30, 0.8);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* ========================
-   通用组件
+   物品栏槽位 & 卡片
    ======================== */
-/* 背景色系统 */
-.bg-white { background-color: white; color: black; }
-.bg-light { background-color: #f8f9fa; color: black; }
+.mc-icon-slot {
+    width: 80px;
+    height: 80px;
+    background-color: #2a2a2a;
+    border: 2px solid #4a4a4a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6);
+    transition: all 0.3s;
+}
 
-/* 卡片系统 */
+.mc-icon-slot i {
+    color: #888;
+    transition: all 0.3s;
+}
+
+.card:hover .mc-icon-slot {
+    border-color: #4CAF50;
+    box-shadow: inset 0 0 15px rgba(76, 175, 80, 0.2);
+}
+
+.card:hover .mc-icon-slot i {
+    color: #55ff55;
+    text-shadow: 0 0 10px #55ff55;
+    transform: scale(1.1);
+}
+
 .card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-color: #ffffff;
-    color: #333333;
+    background-color: #252525;
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #ddd;
+    border-radius: 12px;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    border-color: #555;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* 图片展示区 */
+/* ========================
+   图片展示
+   ======================== */
 #gallery .img-fluid {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid transparent;
 }
 
 #gallery .img-fluid:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-color: #4CAF50;
+    z-index: 5;
+    position: relative;
 }
 
-/* 分页系统 */
+/* ========================
+   分页按钮
+   ======================== */
 .pagination {
-    gap: 0;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.pagination .page-item {
-    margin: 0;
+.pagination .page-item .page-link {
+    background-color: #2a2a2a;
+    border-radius: 6px !important;
+    width: auto;
+    display: inline-block;
+    box-shadow: 2px 2px 0 #000; /* 恢复投影 */
 }
 
-.pagination .page-link {
-    border-radius: 0;
-    margin: 0;
-    padding: 8px 16px;
-    border: 1px solid #dee2e6;
-    color: #4CAF50;
+.pagination .page-item .page-link:hover {
+    background-color: #4CAF50 !important;
+    border-color: #ffffff #1b5e20 #1b5e20 #ffffff !important;
+    transform: translateY(-2px);
 }
 
-.pagination .page-link:focus {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-.pagination .page-item:first-child .page-link {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-
-.pagination .page-item:last-child .page-link {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+/* 点击/激活/聚焦时，去掉蓝色光圈，保持深色背景 */
+.pagination .page-item .page-link:active,
+.pagination .page-item .page-link:focus {
+    background-color: #388E3C !important; /* 点击时变深绿 */
+    border-color: #555555 #ffffff #ffffff #555555 !important; /* 边框反转 */
+    transform: translate(2px, 2px);
+    box-shadow: none !important; /* 去掉投影 */
+    outline: none !important; /* 去掉蓝色轮廓 */
 }
 
 .pagination .page-item.disabled .page-link {
-    color: #6c757d;
-    cursor: not-allowed;
+    background-color: #2a2a2a !important;
+    color: #ccc !important;
+    opacity: 1;
+    cursor: default;
+    border-color: #ffffff #555555 #555555 #ffffff !important;
+    box-shadow: 2px 2px 0 #000 !important;
+    transform: none !important;
 }
 
 /* ========================
-   团队展示区
+   全局去蓝框补丁
    ======================== */
-#team .card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: 100%;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-}
-
-#team .card:hover {
-    transform: translateY(-10px);
-}
-
-#team .card-img-top {
-    border: 5px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin: 1rem auto 0;
-}
-
-#team .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem;
-}
-
-#team .card-title {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    text-align: center;
-    color: #4caf50;
-}
-
-#team .card-subtitle {
-    font-size: 1rem;
-    color: #6c757d;
-    text-align: center;
-}
-
-#team .card-text {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    flex: 1;
-}
-
-#team .btn-primary {
-    background-color: #4caf50;
-    border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    align-self: center;
-}
-
-#team .btn-primary:hover {
-    background-color: #45a049;
+/* 强制覆盖 Bootstrap 对所有按钮和链接的聚焦样式 */
+.btn:focus, .btn:active:focus, .btn-mc-stone:focus, .btn-mc-green:focus,
+.page-link:focus, .page-item .page-link:focus {
+    box-shadow: none !important; /* 去掉发光阴影 */
+    outline: 0 !important;       /* 去掉轮廓线 */
 }
 
 /* ========================
-   分页过渡与容器稳定
+   其他
    ======================== */
-
-#gallery-images {
-    min-height: 600px;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1;
+footer {
+    background-color: #0d0d0d !important;
+    border-top: 2px solid #333;
 }
 
-#team-members {
-    min-height: 450px;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1;
+footer a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* 过渡时的隐藏状态 */
+footer a:hover {
+    color: #55ff55;
+    text-decoration: underline;
+    text-shadow: 0 0 5px #55ff55;
+}
+
 .fade-out {
     opacity: 0 !important;
 }
 
+#gallery-images { transition: opacity 0.3s ease-in-out; }
+#team-members { transition: opacity 0.3s ease-in-out; }
+
+/* 响应式高度 */
 @media (min-width: 769px) {
-    #gallery-images {
-        min-height: 600px; 
-    }
-    #team-members {
-        min-height: 500px;
-    }
+    #gallery-images { min-height: 600px; }
+    #team-members { min-height: 500px; }
 }
 
-/* ========================
-   响应式设计
-   ======================== */
 @media (max-width: 768px) {
+    #gallery-images { min-height: 400px; }
+    #team-members { min-height: 500px; }
+    
     header h1 { font-size: 2rem; }
     header .lead { font-size: 1rem; }
-    .navbar-brand { font-size: 1.25rem; }
-    
     .navbar-toggler {
         border: none;
         padding: 0.5rem;
@@ -294,9 +322,5 @@ header .btn:hover {
         justify-content: center;
         width: 44px;
         height: 44px;
-    }
-
-    #gallery-images, #team-members {
-        min-height: 300px;
     }
 }
