@@ -247,12 +247,41 @@ header .btn:hover {
 }
 
 /* ========================
+   分页过渡与容器稳定
+   ======================== */
+
+#gallery-images {
+    min-height: 600px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+#team-members {
+    min-height: 450px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+/* 过渡时的隐藏状态 */
+.fade-out {
+    opacity: 0 !important;
+}
+
+@media (min-width: 769px) {
+    #gallery-images {
+        min-height: 600px; 
+    }
+    #team-members {
+        min-height: 500px;
+    }
+}
+
+/* ========================
    响应式设计
    ======================== */
 @media (max-width: 768px) {
     header h1 { font-size: 2rem; }
     header .lead { font-size: 1rem; }
-    
     .navbar-brand { font-size: 1.25rem; }
     
     .navbar-toggler {
@@ -265,5 +294,9 @@ header .btn:hover {
         justify-content: center;
         width: 44px;
         height: 44px;
+    }
+
+    #gallery-images, #team-members {
+        min-height: 300px;
     }
 }
