@@ -11,32 +11,8 @@
 
 @font-face {
     font-family: 'Fusion Pixel';
-    src: url('/static/fonts/fusion-pixel-12px-proportional-ja.ttf.woff2') format('woff2'),
-         url('/static/fonts/fusion-pixel-12px-proportional-ja.ttf') format('truetype');
-    unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF00-FFEF, U+4E00-9FAF;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Fusion Pixel';
-    src: url('/static/fonts/fusion-pixel-12px-proportional-ko.ttf.woff2') format('woff2'),
-         url('/static/fonts/fusion-pixel-12px-proportional-ko.ttf') format('truetype');
-    unicode-range: U+1100-11FF, U+3130-318F, U+AC00-D7AF;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Fusion Pixel';
     src: url('/static/fonts/fusion-pixel-12px-proportional-zh_hans.ttf.woff2') format('woff2'),
          url('/static/fonts/fusion-pixel-12px-proportional-zh_hans.ttf') format('truetype');
-    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Fusion Pixel';
-    src: url('/static/fonts/fusion-pixel-12px-proportional-zh_hant.ttf.woff2') format('woff2'),
-         url('/static/fonts/fusion-pixel-12px-proportional-zh_hant.ttf') format('truetype');
     unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
     font-display: swap;
 }
