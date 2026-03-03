@@ -33,7 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // 通用数据加载
     async function loadData(url) {
         try {
-            const response = await fetch(url);
+            const timestamp = new Date().getTime();
+            const separator = url.includes('?') ? '&' : '?';
+            const urlWithTimestamp = `${url}${separator}v=${timestamp}`;
+
+            const response = await fetch(urlWithTimestamp);
+
             if (!response.ok) throw new Error('Network response was not ok');
             return await response.json();
         } catch (error) {
